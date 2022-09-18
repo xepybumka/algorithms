@@ -16,7 +16,9 @@ function binarySearch(int $needle, array $haystack): bool|int
     $high = count($haystack) - 1; // Верхняя граница поиска
 
     while ($low <= $high) {
-        $middleIndex = round(($low + $high) / 2); // Находим середину. Если количество элементов - нечетное, значит - округляем в меньшую сторону
+        $middleIndex = round(
+            ($low + $high) / 2
+        ); // Находим середину. Если количество элементов - нечетное, значит - округляем в меньшую сторону
         $guess = $haystack[$middleIndex];
         if ($guess == $needle) {
             return $middleIndex;
